@@ -1,3 +1,4 @@
+-- luacheck: globals response request
 --#ENDPOINT POST /api/user
 print("Creating a new user")
 
