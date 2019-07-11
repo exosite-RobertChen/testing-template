@@ -40,7 +40,7 @@ endpoints:
 
 modules:
   location: modules
-  include: '**/*.lua'
+  include: './*.lua'
   exclude: ['*_test.lua', '*_spec.lua']
 
 services: # Also applies for service configuration using .yaml format.
