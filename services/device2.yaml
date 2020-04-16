@@ -20,6 +20,7 @@ tags_schema:
     description: |
       Tags validation Schema.
       IMPORTANT: properties types MUST be 'string'.
+    x-exosite-hidden: true
     format: jsonSchema
     type: object
     properties:
