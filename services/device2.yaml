@@ -1,28 +1,14 @@
-# Murano Product Spec File - Smart Lighbulb Example Application
-
 protocol:
   name: onep
 provisioning:
   auth_type: token
 
-resources:
-  temperature:
-    format: number
-  humidity:
-    format: number
-  state:
-    format: number
-    initial: 0
-  uptime:
-    format: number
-
 tags_schema:
     description: |
       Tags validation Schema.
       IMPORTANT: properties types MUST be 'string'.
-    x-exosite-hidden: true
     format: jsonSchema
     type: object
     properties:
-      app_[a-zA-Z0-9]+:
+      app:
         enum: [ object ]
