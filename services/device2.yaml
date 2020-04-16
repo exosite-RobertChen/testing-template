@@ -15,3 +15,14 @@ resources:
     initial: 0
   uptime:
     format: number
+
+tags_schema:
+    description: |
+      Tags validation Schema.
+      IMPORTANT: properties types MUST be 'string'.
+    x-exosite-hidden: true
+    format: jsonSchema
+    type: object
+    properties:
+      type:
+        enum: [ object ]
