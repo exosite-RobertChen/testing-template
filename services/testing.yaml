@@ -1,0 +1,56 @@
+swagger: "2.0"
+
+################################################################################
+#                           Service Metadata                                   #
+################################################################################
+info:
+  version: "1.0"
+  title: My service name
+  description: A full description of the service. Can contain MD tags.
+  contact:
+    name: maintainer name
+    email: maintainer@email.com
+
+################################################################################
+#                            API Information                                   #
+################################################################################
+
+# A hostname with a valid, signed, and active TSL certificate is required.
+host: google.com
+basePath: /
+x-exosite-health-path: /health # This endpoint needs to return 2xx status code. If omitted basePath is used
+x-exosite-token: testing1234
+
+################################################################################
+#                                Operations                                    #
+################################################################################
+paths:
+  /operation:
+    get:
+      description: At least one operation is required.
+      operationId: myOperation # Used as Scripting function call
+      x-exosite-example: >
+                  -- A valid script example
+
+                  local result = MinimalService.myOperation()
+      responses:
+        default: # Http status code is not returned to the scripting result
+          description: Return the operation result
+          schema:
+            description: Operation result structure
+            type: string
+
+x-exosite-usage-metrics:
+  bandwidth:
+    name: Data size downloaded
+    description: The number of bytes downloaded over a calendar month by devices of this product.
+    type: counter
+    unit: byte
+    categories:
+      in: Data uploaded
+      out: Data downloaded
+  size:
+    name: Data size stored
+    description: The number of bytes stored for this product.
+    type: gauge
+    unit: byte
