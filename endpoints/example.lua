@@ -6,4 +6,4 @@ print("Creating a new user")
 print("Fetch a given user" .. request.parameters.userId)
 
 --#ENDPOINT GET /testing
-return "20200526115000"
+return "20200526115800"
